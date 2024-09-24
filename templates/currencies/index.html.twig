@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Exchange Rates</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Currency Code</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in rates %}
+                <tr>
+                    <td>{{ rate.currencyCode }}</td>
+                    <td>{{ rate.rate }} USD</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
