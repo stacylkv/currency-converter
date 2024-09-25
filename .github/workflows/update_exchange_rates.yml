@@ -1,0 +1,12 @@
+name: Update Exchange Rates
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke Update Endpoint
+        run: curl -X GET 'https://currency-converter-rho-five.vercel.app/api/update_exchange_rates.php?token=${{ secrets.UPDATE_SECRET_TOKEN }}'
